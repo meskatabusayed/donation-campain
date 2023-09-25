@@ -9,6 +9,7 @@ const Banner = () => {
       }}
     >
       <div className="absolute inset-0 bg-white bg-opacity-50">
+     
         <h1 className="text-center text-5xl font-bold text-black pt-60">
           I Grow By Helping People In Need
         </h1>

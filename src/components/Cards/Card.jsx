@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Card = ({card}) => {
 
     const {id , image , card_title , card_description , colors } = card || {}
@@ -5,7 +7,7 @@ const Card = ({card}) => {
 
   return (
     <div>
-        <div className="card shadow-lg" style={{ backgroundColor: colors.bg}}>
+       <Link to={`/donation/${id}`} > <div className="card shadow-lg" style={{ backgroundColor: colors.bg}}>
       <figure>
         <img
           src={image}
@@ -20,7 +22,7 @@ const Card = ({card}) => {
         <p className="font-bold text-xl" style={{color:colors.textColor}}>{card_description}</p>
         
       </div>
-    </div>
+    </div></Link>
     </div>
   );
 };
