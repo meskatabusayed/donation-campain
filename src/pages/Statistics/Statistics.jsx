@@ -6,9 +6,9 @@ import { Cell, Pie, PieChart } from "recharts";
 
 const Statistics = () => {
   const [mes , setData] = useState(0)
-  console.log(mes);
+
   const [subTract , setSubTract] = useState(0)
-  console.log(subTract);
+
   const [newAdd , setNewAdd] = useState(0)
  
 
@@ -19,12 +19,18 @@ const Statistics = () => {
   useEffect(() => {
 
     const dataValue = JSON.parse(localStorage.getItem('donation'))
-    const parcentage = Math.floor((100*`${mes}` )/12)
-    const notDonate = 100 - parseFloat(parcentage)
-    setSubTract(parcentage)
-    setNewAdd(notDonate)
-    console.log(parcentage , notDonate);
-    setData(dataValue.length);
+    if(dataValue){
+      const parcentage = Math.floor((100*`${mes}` )/12)
+      const notDonate = 100 - parseFloat(parcentage)
+      setSubTract(parcentage)
+      setNewAdd(notDonate)
+      console.log(parcentage , notDonate);
+      setData(dataValue.length);
+    }
+    else {
+      console.log('No data found');
+    }
+   
 
     
   
@@ -57,7 +63,9 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
   );
 };
     return (
+    
         <div className="flex justify-center items-center h-screen">
+       
            <PieChart width={400} height={400}>
           <Pie
             data={data}
@@ -76,6 +84,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
         </PieChart>
 
         </div>
+ 
     );
 };
 
