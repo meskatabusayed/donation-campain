@@ -43,7 +43,7 @@ const Statistics = () => {
  
 
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+const COLORS = ['#FF444A', '#00C49F', '#FFBB28', '#FF8042'];
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent}) => {
@@ -57,7 +57,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
   );
 };
     return (
-        <div>
+        <div className="flex justify-center items-center h-screen">
            <PieChart width={400} height={400}>
           <Pie
             data={data}

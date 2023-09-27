@@ -8,12 +8,12 @@ const DonationCard = ({donate}) => {
 
     return (
         <div>
-            <div className="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+            <div className="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md" style={{ backgroundColor: colors.bg}}>
   <div className="relative m-0 w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border text-gray-700">
-    <img
+    <img 
       src={image}
       alt="image"
-      className="h-full w-full object-cover"
+      className="h-full w-full object-cove"
     />
   </div>
   <div className="p-6">
@@ -28,7 +28,7 @@ const DonationCard = ({donate}) => {
         
         type="button"
       >
-       <div className="p-2 rounded-lg text-black" style={{ backgroundColor: colors.bg}} >View Details</div>
+       <div className="p-2 rounded-lg text-white" style={{ backgroundColor: colors.textColor}} >View Details</div>
        
       </button>
     

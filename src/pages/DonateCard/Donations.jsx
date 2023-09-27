@@ -4,7 +4,7 @@ import swal from "sweetalert";
 
 const Donations = ({donateCard}) => {
 
-    const {id, image , card_content , card_description ,  price } = donateCard || {}
+    const {id, image , card_content , card_description ,  price, colors } = donateCard || {}
 
     const handleAddToDonate = () => {
 
@@ -26,7 +26,7 @@ const Donations = ({donateCard}) => {
                 swal("Good job!", "Donation Added successfully!", "success");
              }
              else{
-                swal("Vary Bad!", "No Duplicate!", "error");
+                swal("All Ready Exist!", "No Duplicate!", "error");
              }
 
 
@@ -38,7 +38,7 @@ const Donations = ({donateCard}) => {
     }
 
     return (
-            <div className="card shadow-xl  relative py-10">
+            <div className="card shadow-xl  relative py-10 ">
        
         <figure>
           <img className="w-full"
@@ -53,7 +53,10 @@ const Donations = ({donateCard}) => {
           <h2 className="card-title">{card_description}</h2>
           <p>{card_content}</p>
           <div className="card justify-start  absolute  -mt-32 text-white">
-            <button onClick={handleAddToDonate} className="btn">Donate ${price}</button>
+           
+            <button onClick={handleAddToDonate} className="p-3 rounded-lg bg-[#FF444A] text-white">Donate ${price}</button>
+            
+          
                
           </div>
          
